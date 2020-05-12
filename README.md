@@ -1,7 +1,8 @@
 # YouTube_Trending_Data
 > YouTube Trending list is updated every 15 minutes. For my thesis, I have collected data from YouTube Trending.
 > For survival analysis, I made data censored from 28 February to 31 March, 2019. 
-![Image of Censoring]()
+
+![Image of Censoring](https://github.com/alsrud6949/YouTube_Trending_Data/blob/master/images/censoring.png)
 
 # Motivation
 Videos in the Trending list are recognized as "most popular now contents" by YouTube algorithm. I wanted to know how these videos keep its popularity further.

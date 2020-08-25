@@ -30,4 +30,19 @@ for i in range(0,len(selection)-1):
     
 error = pd.DataFrame.from_dict(error)
 error.to_csv('__errorcaptionlist.csv')
- 
+
+import glob, os
+
+filenames = glob.glob('*.txt')
+
+caption_list = []
+        
+for f in filenames:
+    with open(f, 'rt', encoding='UTF8') as df:
+        cap  = df.read()
+    caption_list.append((f,cap))
+    cc = pd.DataFrame(caption_list, columns=['filename', 'caption'])
+  
+cc['video_id'] = cc['filename'].apply(lambda x: '{vid}'.format(vid=x[:-4]))
+
+cc.to_csv('caption.csv')

@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Mar 21 18:50:32 2019
-
-@author: Mingyeong
+Data Preprocessing and Censoring
 """
 
 import pandas as pd

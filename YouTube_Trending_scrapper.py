@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon May 11 22:49:09 2020
-
-@author: Mingyeong
+YouTube Trending Crawling
 """
 
 import requests, sys, time

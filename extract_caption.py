@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Mar 28 16:38:27 2019
-
-@author: Mingyeong
+Video Caption (Script) Extraction
 """
-#after running datapreprocessing.py
 import pandas as pd
 import numpy as np
 import os
 from youtube_transcript_api import YouTubeTranscriptApi
 
+os.chdir('D:\\youtube data')
 dd = pd.read_csv('fulldata.csv')
 selection = np.unique(dd['video_id'])
 

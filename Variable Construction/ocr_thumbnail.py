@@ -26,13 +26,13 @@ driver.implicitly_wait(3)
 url = "https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/"
 driver.get(url)
 
-os.chdir('D:\\data')
-cc=pd.read_csv("fulldata.csv")
+os.chdir('D:\\youtube')
+data=pd.read_csv("fulldata.csv")
 
 thumbnail_text = pd.DataFrame(columns = ["video_id","th_text"])
 
 imgurl_form = "https://img.youtube.com/vi/<insert-youtube-video-id-here>/maxresdefault.jpg"
-video_id = cc.video_id.unique()
+video_id = data.video_id.unique()
        
 for i in range(len(video_id)):
     vid=video_id[i]
@@ -63,9 +63,7 @@ a = thumbnail_text[thumbnail_text['th_text']!='We could not detect any words in 
 b = a[a['th_text']!='We were unable to pull an image at the specified url. Please try again.']
 concated = pd.concat([b, excep, excep2])
 
-os.chdir('D:\\youtube data')
-data = pd.read_csv('fulldata.csv')
 text = data[['video_id','title']]
 
 data_text = pd.merge(text, concated, on = "video_id")
-data_text.to_csv("ocr.csv", indext = False)
+data_text.to_csv("ocr.csv", index = False)

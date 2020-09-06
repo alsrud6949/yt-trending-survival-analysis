@@ -63,4 +63,9 @@ a = thumbnail_text[thumbnail_text['th_text']!='We could not detect any words in 
 b = a[a['th_text']!='We were unable to pull an image at the specified url. Please try again.']
 concated = pd.concat([b, excep, excep2])
 
-concated.to_csv("th_text.csv", index = False)
+os.chdir('D:\\youtube data')
+data = pd.read_csv('fulldata.csv')
+text = data[['video_id','title']]
+
+data_text = pd.merge(text, concated, on = "video_id")
+data_text.to_csv("ocr.csv", indext = False)

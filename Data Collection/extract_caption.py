@@ -7,7 +7,7 @@ import numpy as np
 import os
 from youtube_transcript_api import YouTubeTranscriptApi
 
-os.chdir('D:\\youtube data')
+os.chdir('D:\\youtube')
 dd = pd.read_csv('fulldata.csv')
 selection = np.unique(dd['video_id'])
 
@@ -43,4 +43,5 @@ for f in filenames:
   
 cc['video_id'] = cc['filename'].apply(lambda x: '{vid}'.format(vid=x[:-4]))
 
-cc.to_csv('caption.csv')
+os.chdir('D:\\youtube')
+cc.to_csv('caption.csv', index = False)

@@ -9,13 +9,13 @@ import filetype
 import pandas as pd
 import numpy as np
 
-os.chdir('D:\\youtube data')
+os.chdir('D:\\youtube')
 df=pd.read_csv('fulldata.csv')
 
 img_list=np.unique(df['thumbnail_link'].values.tolist())
 filename = np.unique(df['video_id'].values.tolist())
 
-os.chdir("D:\\thumbnail_image")
+os.chdir("D:\\youtube\\thumbnail_image")
 for i in range(len(img_list)):
     name = filename[i]
     # download image from link

@@ -105,4 +105,6 @@ with tf.device('/CPU:0'):
             print("%d)" % (i + 1), "%s : Score = %0.5f" % (name, score))
     
     aa = pd.DataFrame(score_list, columns=['video_id','filename', 'mean_aesthetics','std_aesthetics'])
-    aa.to_csv('aesthetics.csv')
+    
+os.chdir('D:\\youtube')
+aa.to_csv('aesthetics.csv')

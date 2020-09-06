@@ -77,4 +77,5 @@ mask1 = df.video_id.apply(lambda x: any(item for item in newselection if item in
 newdf = df[mask1]
 finaldf = pd.concat([dd, newdf], ignore_index=True)
 
+os.chdir('D:\\youtube')
 finaldf.to_csv('fulldata.csv', encoding = 'utf-8', sep= ',', index = False)
